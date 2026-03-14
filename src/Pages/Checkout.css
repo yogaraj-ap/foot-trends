@@ -1,0 +1,61 @@
+.checkout-container{
+display:flex;
+max-width:1000px;
+margin:auto;
+padding:40px;
+gap:40px;
+}
+
+.checkout-left{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.checkout-left input,
+.checkout-left select{
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+.checkout-right{
+width:350px;
+border:1px solid #eee;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+.checkout-right img{
+width:150px;
+margin-bottom:10px;
+}
+
+.delivery{
+color:green;
+margin:10px 0;
+}
+
+.place-order{
+width:100%;
+padding:12px;
+background:black;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.cancel-order{
+width:100%;
+padding:10px;
+background:#eee;
+border:none;
+border-radius:6px;
+margin-top:10px;
+cursor:pointer;
+}

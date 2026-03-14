@@ -1,0 +1,19 @@
+.wishlist-page{
+max-width:900px;
+margin:auto;
+padding:30px;
+}
+
+.wish-card{
+display:flex;
+align-items:center;
+justify-content:space-between;
+border:1px solid #eee;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.wish-card img{
+width:80px;
+}

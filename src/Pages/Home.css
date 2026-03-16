@@ -1,4 +1,4 @@
-
+/* 
 .home{
 max-width:1300px;
 margin:auto;
@@ -259,4 +259,125 @@ text-align:center;
 width:220px;
 }
 
+} */
+
+
+.collection{
+margin-top:50px;
+}
+
+.collection h2{
+text-align:center;
+font-size:32px;
+margin-bottom:30px;
+font-weight:600;
+color:#222;
+}
+
+/* SLIDER */
+
+.slider-wrapper{
+position:relative;
+}
+
+.grid-slider{
+display:flex;
+gap:25px;
+overflow-x:auto;
+scrollbar-width:none;
+padding:10px;
+}
+
+.grid-slider::-webkit-scrollbar{
+display:none;
+}
+
+/* CARD */
+
+.card{
+min-width:240px;
+background:#ffffff;
+border-radius:18px;
+padding:20px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:0.35s;
+border:1px solid #f1f1f1;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 35px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+
+.card img{
+width:100%;
+height:180px;
+object-fit:contain;
+margin-bottom:10px;
+transition:0.3s;
+}
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+/* NAME */
+
+.card h4{
+font-size:18px;
+margin:8px 0;
+color:#333;
+}
+
+/* PRICE */
+
+.card p{
+font-weight:600;
+color:#666;
+margin-bottom:14px;
+font-size:17px;
+}
+
+/* BUTTON */
+
+.card button{
+padding:10px 22px;
+border:none;
+border-radius:25px;
+background:#222;
+color:white;
+cursor:pointer;
+font-weight:500;
+transition:0.3s;
+}
+
+.card button:hover{
+background:#555;
+}
+
+/* SCROLL BUTTON */
+
+.scroll-btn{
+position:absolute;
+top:40%;
+background:white;
+color:#333;
+border:1px solid #ddd;
+width:40px;
+height:40px;
+border-radius:50%;
+cursor:pointer;
+font-size:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.scroll-btn.left{
+left:-10px;
+}
+
+.scroll-btn.right{
+right:-10px;
 }

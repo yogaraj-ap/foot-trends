@@ -105,8 +105,8 @@ import Footer from "../Components/Footer";
 
 import s1 from "../assets/s1.jpg";
 import s2 from "../assets/s2.jpg";
-import s3 from "../assets/s3.jpg";
-import s4 from "../assets/s4.jpg";
+import s5 from "../assets/s5.jpg";
+import s6 from "../assets/s6.jpg";
 
 import nike from "../assets/brands/nike.png";
 import adidas from "../assets/brands/adidas.png";
@@ -122,16 +122,16 @@ function Home() {
   const sneakers = [
     { id: 1, name: "Nike Air Max", price: 7999, img: s1 },
     { id: 2, name: "Adidas Ultra Boost", price: 8999, img: s2 },
-    { id: 3, name: "Puma RS-X", price: 6999, img: s3 },
-    { id: 4, name: "Jordan Retro", price: 11999, img: s4 },
-    { id: 5, name: "Jordan Retro", price: 11999, img: s4 },
-    { id: 6, name: "Jordan Retro", price: 11999, img: s4 },
-    { id: 7, name: "Jordan Retro", price: 11999, img: s4 },
-    { id: 8, name: "Jordan Retro", price: 11999, img: s4 },
-    { id: 9, name: "Puma RS-X", price: 6999, img: s3 },
-    { id: 10, name: "Puma RS-X", price: 6999, img: s3 },
-    { id: 11, name: "Puma RS-X", price: 6999, img: s3 },
-    { id: 12, name: "Puma RS-X", price: 6999, img: s3 },
+    { id: 3, name: "Puma RS-X", price: 6999, img: s5 },
+    { id: 4, name: "Jordan Retro", price: 11999, img: s6 },
+    { id: 5, name: "Jordan Retro", price: 11999, img: s6 },
+    { id: 6, name: "Jordan Retro", price: 11999, img: s6 },
+    { id: 7, name: "Jordan Retro", price: 11999, img: s6 },
+    { id: 8, name: "Jordan Retro", price: 11999, img: s6 },
+    { id: 9, name: "Puma RS-X", price: 6999, img: s5 },
+    { id: 10, name: "Puma RS-X", price: 6999, img: s5 },
+    { id: 11, name: "Puma RS-X", price: 6999, img: s5 },
+    { id: 12, name: "Puma RS-X", price: 6999, img: s5 },
   ];
 
   // ADD TO CART FUNCTION

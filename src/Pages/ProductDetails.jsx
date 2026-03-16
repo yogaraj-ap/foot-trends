@@ -22,8 +22,8 @@ import { toast } from "react-toastify";
 import "./ProductDetails.css";
 import s1 from "../assets/s1.jpg";
 import s2 from "../assets/s2.jpg";
-import s3 from "../assets/s3.jpg";
-import s4 from "../assets/s4.jpg";
+import s5 from "../assets/s5.jpg";
+import s6 from "../assets/s6.jpg";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -31,8 +31,8 @@ function ProductDetails() {
   const products = [
     { id: "1", name: "Nike Air Max", price: 7999, img: s1 },
     { id: "2", name: "Adidas Ultra Boost", price: 8999, img: s2 },
-    { id: "3", name: "Puma RS-X", price: 6999, img: s3 },
-    { id: "4", name: "Jordan Retro", price: 11999, img: s4 },
+    { id: "3", name: "Puma RS-X", price: 6999, img: s5 },
+    { id: "4", name: "Jordan Retro", price: 11999, img: s6 },
   ];
 
   const product = products.find((p) => p.id === id);

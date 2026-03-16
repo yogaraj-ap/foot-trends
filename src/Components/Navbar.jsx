@@ -69,9 +69,10 @@
 
 // export default Navbar;
 
+
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
 function Navbar() {
@@ -87,11 +88,13 @@ function Navbar() {
   };
 
   return (
+    <>
+    
     <nav className="navbar">
 
-      {/* MOBILE MENU ICON */}
+      {/* MENU ICON */}
       <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
+        {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
 
       {/* LOGO */}
@@ -101,44 +104,65 @@ function Navbar() {
         </Link>
       </div>
 
-      {/* NAV LINKS */}
-      <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <Link to="/" onClick={()=>setMenuOpen(false)}>Home</Link>
-        <Link to="/shop" onClick={()=>setMenuOpen(false)}>Shop</Link>
-        <Link to="/cart" onClick={()=>setMenuOpen(false)}>Cart</Link>
+      {/* DESKTOP MENU */}
+      <div className="nav-links desktop">
+        <Link to="/">Home</Link>
+        <Link to="/shop">Shop</Link>
+        <Link to="/cart">Cart</Link>
 
         {user && (
-          <Link 
-            to="/profile" 
-            className="profile-link"
-            onClick={()=>setMenuOpen(false)}
-          >
+          <Link to="/profile" className="profile-link">
             👤 {user.name || "Profile"}
           </Link>
         )}
+      </div>
 
-        {/* AUTH SECTION */}
-        <div className="auth-links">
-
-          {user ? (
-            <button
-              onClick={handleLogout}
-              className="logout-btn"
-            >
-              Logout
-            </button>
-          ) : (
-            <>
-              <Link to="/login" className="login-btn">Login</Link>
-              <Link to="/register" className="register-btn">Register</Link>
-            </>
-          )}
-
-        </div>
-
+      {/* AUTH */}
+      <div className="auth-links desktop">
+        {user ? (
+          <button onClick={handleLogout} className="logout-btn">
+            Logout
+          </button>
+        ) : (
+          <>
+            <Link to="/login" className="login-btn">Login</Link>
+            <Link to="/register" className="register-btn">Register</Link>
+          </>
+        )}
       </div>
 
     </nav>
+
+    {/* OVERLAY */}
+    {menuOpen && <div className="overlay" onClick={()=>setMenuOpen(false)}></div>}
+
+    {/* MOBILE MENU */}
+    <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+
+      <Link to="/" onClick={()=>setMenuOpen(false)}>Home</Link>
+      <Link to="/shop" onClick={()=>setMenuOpen(false)}>Shop</Link>
+      <Link to="/cart" onClick={()=>setMenuOpen(false)}>Cart</Link>
+
+      {user && (
+        <Link to="/profile" onClick={()=>setMenuOpen(false)}>
+          👤 {user.name || "Profile"}
+        </Link>
+      )}
+
+      {user ? (
+        <button onClick={handleLogout} className="logout-btn">
+          Logout
+        </button>
+      ) : (
+        <>
+          <Link to="/login" className="login-btn">Login</Link>
+          <Link to="/register" className="register-btn">Register</Link>
+        </>
+      )}
+
+    </div>
+
+    </>
   );
 }
 

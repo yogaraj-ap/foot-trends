@@ -154,7 +154,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
 import s1 from "../assets/s1.jpg";
-import s2 from "../assets/s2.jpg";
+import s7 from "../assets/s7.jpg";
 import s5 from "../assets/s5.jpg";
 import s6 from "../assets/s6.jpg";
 
@@ -187,7 +187,7 @@ behavior: "smooth"
 
 const sneakers = [
 { id: 1, name: "Nike Air Max", price: 7999, img: s1 },
-{ id: 2, name: "Adidas Ultra Boost", price: 8999, img: s2 },
+{ id: 2, name: "Adidas Ultra Boost", price: 8999, img: s7 },
 { id: 3, name: "Puma RS-X", price: 6999, img: s5 },
 { id: 4, name: "Jordan Retro", price: 11999, img: s6 },
 { id: 5, name: "Jordan Retro", price: 11999, img: s6 },

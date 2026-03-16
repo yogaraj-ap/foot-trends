@@ -1,4 +1,4 @@
-.navbar{
+/* .navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -56,4 +56,118 @@ border:none;
 padding:8px 15px;
 border-radius:6px;
 cursor:pointer;
+} */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+border-bottom:1px solid #eee;
+position:relative;
+}
+
+/* LOGO */
+
+.logo h2{
+margin:0;
+font-weight:700;
+}
+
+/* NAV LINKS */
+
+.nav-links{
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.profile-link{
+font-weight:600;
+}
+
+/* AUTH */
+
+.auth-links{
+display:flex;
+gap:15px;
+}
+
+.login-btn{
+padding:8px 15px;
+border:1px solid black;
+border-radius:6px;
+text-decoration:none;
+color:black;
+}
+
+.register-btn{
+padding:8px 15px;
+background:black;
+color:white;
+border-radius:6px;
+text-decoration:none;
+}
+
+.logout-btn{
+background:#ff4d4d;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MENU ICON */
+
+.menu-icon{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+.menu-icon{
+display:block;
+position:absolute;
+left:20px;
+}
+
+.logo{
+margin:auto;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+align-items:center;
+gap:20px;
+padding:20px 0;
+border-top:1px solid #eee;
+display:none;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.auth-links{
+flex-direction:column;
+gap:10px;
+}
+
 }

@@ -203,7 +203,7 @@ return (
 <div className="home">
 
 {/* HERO */}
-<section className="hero">
+{/* <section className="hero">
 <div className="hero-text">
 <h1>Step Into Style 👟</h1>
 <p>Discover premium sneakers at Trend-Foots</p>
@@ -213,6 +213,32 @@ return (
 <div className="hero-image">
 <img src={s1} alt="Sneaker" className="rotate-img"/>
 </div>
+</section> */}
+<section className="hero">
+
+  <div className="hero-left">
+    <p className="hero-tag">NEW COLLECTION</p>
+
+    <h1>
+      Elevate Your <br /> Sneaker Game 👟
+    </h1>
+
+    <p className="hero-desc">
+      Discover premium sneakers designed for comfort, style, and performance.
+    </p>
+
+    <div className="hero-buttons">
+      <button className="primary-btn">Shop Now</button>
+      <button className="secondary-btn">Explore</button>
+    </div>
+  </div>
+
+  <div className="hero-right">
+    <div className="hero-img-box">
+  <img src={s1} alt="Sneaker" className="hero-img"/>
+</div>
+  </div>
+
 </section>
 
 {/* BRANDS */}

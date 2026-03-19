@@ -22,7 +22,6 @@
 // export default Shop;
 
 
-import ProductCard from "../Components/ProductCard";
 import "./Shop.css";
 import s1 from "../assets/s1.jpg";
 import s5 from "../assets/s5.jpg";
@@ -39,13 +38,29 @@ const products = [
 function Shop() {
   return (
     <div className="shop">
+
       <h2>Shop Sneakers</h2>
 
-    <div className="grid">
-  {products.map((p, index) => (
-    <ProductCard key={`${p.id}-${index}`} product={p} />
-  ))}
-</div>
+      <div className="product-grid">
+
+        {products.map((p) => (
+          <div className="nike-card" key={p.id}>
+
+            <div className="nike-img">
+              <img src={p.image} alt={p.name} />
+              <div className="wishlist">♡</div>
+            </div>
+
+            <div className="nike-info">
+              <h4>{p.name}</h4>
+              <p className="category">Men's Shoes</p>
+              <p className="price">₹{p.price}</p>
+            </div>
+
+          </div>
+        ))}
+
+      </div>
 
     </div>
   );

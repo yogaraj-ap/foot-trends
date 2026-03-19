@@ -144,6 +144,7 @@
 // export default Home;
 
 
+
 import "./Home.css";
 import { Link } from "react-router-dom";
 import API from "../services/api";
@@ -171,62 +172,38 @@ function Home() {
 
 const scrollRef = useRef();
 
-const scrollLeft = () => {
-scrollRef.current.scrollBy({
-left: -300,
-behavior: "smooth"
-});
-};
-
-const scrollRight = () => {
-scrollRef.current.scrollBy({
-left: 300,
-behavior: "smooth"
-});
-};
-
 const sneakers = [
-{ id: 1, name: "Nike Air Max", price: 7999, img: s1 },
-{ id: 2, name: "Adidas Ultra Boost", price: 8999, img: s7 },
-{ id: 3, name: "Puma RS-X", price: 6999, img: s5 },
+{ id: 1, name: "Nike Air Force 1 '07 LV8", price: 10795, img: s1 },
+{ id: 2, name: "Nike Air Force 1 '07", price: 11895, img: s7 },
+{ id: 3, name: "Nike Dunk Low", price: 9695, img: s5 },
 { id: 4, name: "Jordan Retro", price: 11999, img: s6 },
 { id: 5, name: "Jordan Retro", price: 11999, img: s6 },
 { id: 6, name: "Jordan Retro", price: 11999, img: s6 },
-{ id: 7, name: "Jordan Retro", price: 11999, img: s6 },
-{ id: 8, name: "Jordan Retro", price: 11999, img: s6 },
 ];
 
 const addToCart = async (item) => {
 try {
-
-const cartItem = {
+await API.post("/cart/add", {
 productId: item.id,
 productName: item.name,
 image: item.img,
 price: item.price,
 quantity: 1
-};
-
-await API.post("/cart/add", cartItem);
-
+});
 toast.success("Added to Cart 🛒");
-
-} catch (error) {
+} catch {
 toast.error("Failed to add to cart");
 }
 };
 
 return (
-
 <>
 <Navbar/>
 
 <div className="home">
 
 {/* HERO */}
-
 <section className="hero">
-
 <div className="hero-text">
 <h1>Step Into Style 👟</h1>
 <p>Discover premium sneakers at Trend-Foots</p>
@@ -236,18 +213,11 @@ return (
 <div className="hero-image">
 <img src={s1} alt="Sneaker" className="rotate-img"/>
 </div>
-
 </section>
-
 
 {/* BRANDS */}
-
 <section className="brands">
-
-<div className="brand-slider">
-
 <div className="brand-track">
-
 <img src={nike}/>
 <img src={adidas}/>
 <img src={puma}/>
@@ -256,71 +226,47 @@ return (
 <img src={asic}/>
 <img src={vans}/>
 <img src={converse}/>
-
-<img src={nike}/>
-<img src={adidas}/>
-<img src={puma}/>
-<img src={newbalance}/>
-<img src={reebok}/>
-<img src={asic}/>
-<img src={vans}/>
-<img src={converse}/>
-
 </div>
-
-</div>
-
 </section>
 
-
 {/* COLLECTION */}
-
 <section className="collection">
+  <h2>Trending Sneakers 🔥</h2>
 
-<h2>Trending Sneakers 🔥</h2>
+  <div className="product-container">
 
-<div className="slider-wrapper">
+    {sneakers.map((item) => (
+      <div className="nike-card" key={item.id}>
 
-<button className="scroll-btn left" onClick={scrollLeft}>
-❮
-</button>
+        <Link to={`/product/${item.id}`} className="nike-img-wrapper">
+          <img src={item.img} alt={item.name} />
+          <div className="wishlist">♡</div>
+        </Link>
 
-<div className="grid-slider" ref={scrollRef}>
+        <div className="nike-info">
+          <span className="tag">Just In</span>
+          <h4>{item.name}</h4>
+          <p className="category">Men's Shoes</p>
+          <p className="price">₹{item.price}</p>
 
-{sneakers.map((item)=>(
+          <button
+            className="cart-btn"
+            onClick={() => addToCart(item)}
+          >
+            Add to Cart
+          </button>
+        </div>
 
-<div className="card" key={item.id}>
+      </div>
+    ))}
 
-<Link to={`/product/${item.id}`}>
-<img src={item.img} alt={item.name}/>
-</Link>
-
-<h4>{item.name}</h4>
-<p>₹ {item.price}</p>
-
-<button onClick={()=>addToCart(item)}>
-Add to Cart
-</button>
-
-</div>
-
-))}
-
-</div>
-
-<button className="scroll-btn right" onClick={scrollRight}>
-❯
-</button>
-
-</div>
-
+  </div>
 </section>
 
 </div>
 
 <Footer/>
 </>
-
 );
 }
 
